@@ -33,4 +33,11 @@ gulp.task('js',function(){
     }
 });
 
-
+gulp.task('jade',function(){
+    var jade_files = {};
+    gulp.src('./backend/template/jade/*.jade')
+        .pipe(jade({
+            locals:jade_files
+        }))
+        .pipe(gulp.dest('./backend/template/'))
+});
