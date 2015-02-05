@@ -8,6 +8,8 @@ python requirement please install from requirements.txt
 
 pip install -r requirements.txt
 
+We use Django Restful API for web API
+
 Note :
 
     Please update requirements.txt after you add a new python plugin
