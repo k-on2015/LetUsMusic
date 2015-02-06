@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+	head
+		title="Let Us Music"
+	body
+		div(class='nav navbar')
+		
+- var brand = 'Let Us Music'
+
+ul.navbar.navbar-default
+	div.container-fluid
+		div.nav-header
+			a.navbar-brand(href="javascript:;")= brand
+			ul
+				each val, index in {'control':"管理",'ad':"广告",'setting':"设置"}
+					li(id=index)= val 

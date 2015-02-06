@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'backend',
+    'api'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,8 +60,12 @@ WSGI_APPLICATION = 'LetUsMusic.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Letusmusic',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '3306'
     }
 }
 
@@ -76,8 +82,19 @@ USE_L10N = True
 
 USE_TZ = True
 
+DEFAULT_CHARSET = 'utf-8'
+FILE_CHARSET = 'utf-8'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,"static")
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,"static")
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,"backend/template"),
+)
